@@ -9,40 +9,76 @@
         text-align: center;
         margin: 50px;
       }
-      h1 {
-        font-size: 48px;
-        color: black;
+
+      nav {
+        margin-bottom: 40px;
       }
-      h2 {
-        font-size: 32px;
+
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: blue;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      h1, h2 {
         color: #333;
       }
+
       ul {
         list-style-type: none;
         padding: 0;
         font-size: 20px;
         color: #555;
       }
+
       li {
         margin: 10px 0;
+      }
+
+      .page {
+        display: none;
+      }
+
+      .active {
+        display: block;
       }
     </style>
   </head>
   <body>
-    <h1>Moseti Faith</h1>
+    <nav>
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('about')">About</a>
+    </nav>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <div id="home" class="page active">
+      <h1>Moseti Faith</h1>
+    </div>
 
-    <h2>Fun Facts</h2>
-    <ul>
-      <li>I love learning new web technologies and coding</li>
-      <li>I enjoy reading books</li>
-      <li>My favorite meal is beef masala</li>
-    </ul>
+    <div id="about" class="page">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <h2>Fun Facts</h2>
+      <ul>
+        <li>I love learning new web technologies and coding</li>
+        <li>I enjoy reading books</li>
+        <li>My favorite meal is beef masala</li>
+      </ul>
+    </div>
+
+    <script>
+      function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(function(page) {
+          page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+      }
+    </script>
   </body>
 </html>
