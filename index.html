@@ -4,14 +4,16 @@
     <title>Moseti Faith</title>
     <style>
       body {
+        margin: 0;
         background-color: white;
         font-family: Arial, sans-serif;
         text-align: center;
-        margin: 50px;
       }
 
       nav {
-        margin-bottom: 40px;
+        padding: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
       }
 
       nav a {
@@ -22,7 +24,27 @@
         cursor: pointer;
       }
 
-      h1, h2 {
+      .page {
+        display: none;
+        padding: 50px 20px;
+      }
+
+      .active {
+        display: block;
+      }
+
+      #home h1 {
+        font-size: 48px;
+        color: black;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+      }
+
+      #about h2 {
+        font-size: 32px;
         color: #333;
       }
 
@@ -35,14 +57,6 @@
 
       li {
         margin: 10px 0;
-      }
-
-      .page {
-        display: none;
-      }
-
-      .active {
-        display: block;
       }
     </style>
   </head>
